@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Derrick Koros — IT Systems, Security & Software</title>
+<meta name="description" content="Derrick Koros, Computer Science student at Strathmore University. IT support, systems administration, cybersecurity and software.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{--bg:#f6f7f5;--fg:#141816;--muted:#5d665f;--card:#fff;--line:#dfe3dd;--accent:#0f8a5f;--accent2:#2563eb;--afg:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a0c0e;--fg:#eef2ef;--muted:#98a39c;--card:#11151a;--line:#232a30;--accent:#3ddc97;--accent2:#60a5fa;--afg:#06130d}}
+:root[data-theme="dark"]{--bg:#0a0c0e;--fg:#eef2ef;--muted:#98a39c;--card:#11151a;--line:#232a30;--accent:#3ddc97;--accent2:#60a5fa;--afg:#06130d}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+.mono,.label,.tags span,.n,.d{font-family:"JetBrains Mono",ui-monospace,monospace}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+.logo{font-weight:800;letter-spacing:.04em;font-size:15px}.logo b{color:var(--accent)}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:14px;color:var(--muted)}
+nav ul a:hover{color:var(--fg)}
+.badge{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--accent);border:1px solid var(--line);padding:4px 10px;border-radius:999px}
+.badge:before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-right:7px;animation:pulse 1.8s infinite}
+@keyframes pulse{50%{opacity:.25;transform:scale(1.6)}}
+.hero{position:relative;padding:84px 0 56px;overflow:hidden}
+#net{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.hero .wrap{position:relative;z-index:1}
+.eyebrow{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--accent);margin:0 0 18px}
+h1{font-size:clamp(38px,7.5vw,74px);line-height:1.02;letter-spacing:-.035em;margin:0 0 20px;max-width:13em;font-weight:800}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--muted);font-size:clamp(16px,2.2vw,19px);max-width:36em;margin:0 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:12px 20px;border-radius:10px;font-weight:600;font-size:15px;border:1px solid var(--line);background:var(--card);transition:transform .2s,border-color .2s}
+.btn:hover{transform:translateY(-2px);border-color:var(--accent)}
+.btn.p{background:var(--accent);color:var(--afg);border-color:var(--accent)}
+.term{margin-top:40px;font-family:"JetBrains Mono",monospace;font-size:13px;background:color-mix(in srgb,var(--card) 92%,transparent);border:1px solid var(--line);border-radius:12px;overflow:hidden;max-width:640px;box-shadow:0 20px 60px -30px var(--accent)}
+.tbar{display:flex;gap:6px;padding:10px 14px;border-bottom:1px solid var(--line)}
+.tbar i{width:10px;height:10px;border-radius:50%;background:var(--line)}
+.tbody{padding:14px 16px;min-height:150px;max-height:280px;overflow:auto;color:var(--muted)}
+.tbody div{white-space:pre-wrap;word-break:break-word;margin-bottom:4px}
+.tbody b{color:var(--accent);font-weight:500}.tbody u{color:var(--accent2);text-decoration:none}
+.ps{color:var(--accent)}
+.tline{display:flex;gap:8px;align-items:center}
+.tline input{flex:1;min-width:0;background:none;border:0;outline:0;color:var(--fg);font:inherit;caret-color:var(--accent)}
+.hint{font-size:12px;color:var(--muted);margin:10px 2px 0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:40px}
+.stat{border-left:2px solid var(--accent);padding:2px 0 2px 14px}
+.stat b{display:block;font-size:30px;letter-spacing:-.02em;font-weight:800}
+.stat span{font-size:13px;color:var(--muted)}
+section{padding:64px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(26px,4vw,38px);letter-spacing:-.02em;margin:0 0 30px;line-height:1.15;font-weight:800}
+.label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin:0 0 10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:10px;overflow:hidden;transition:transform .25s,border-color .25s}
+.card:before{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx,50%) var(--my,0%),color-mix(in srgb,var(--accent) 16%,transparent),transparent 70%);opacity:0;transition:opacity .25s;pointer-events:none}
+.card:hover{transform:translateY(-4px);border-color:var(--accent)}.card:hover:before{opacity:1}
+.card>*{position:relative}
+.n{font-size:12px;color:var(--accent)}
+.card h3{margin:0;font-size:20px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:8px}
+.tags span{font-size:12px;border:1px solid var(--line);border-radius:6px;padding:3px 8px;color:var(--muted)}
+.more{font-size:14px;font-weight:600;color:var(--accent)}
+.marq{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.track{display:flex;gap:10px;width:max-content;animation:scroll 34s linear infinite}
+.marq:hover .track{animation-play-state:paused}
+.track span{font-family:"JetBrains Mono",monospace;font-size:14px;padding:9px 16px;border:1px solid var(--line);border-radius:999px;background:var(--card);white-space:nowrap}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.flow{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px;font-family:"JetBrains Mono",monospace;font-size:13px}
+.flow span{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px 12px}
+.flow i{font-style:normal;color:var(--accent);align-self:center}
+.tl{border-left:1px solid var(--line);margin-left:6px}
+.tl>div{padding:0 0 30px 26px;position:relative}
+.tl>div:before{content:"";position:absolute;left:-5px;top:8px;width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 20%,transparent)}
+.d{font-size:12px;color:var(--muted)}
+.tl h3{margin:4px 0 2px;font-size:19px}
+.tl .r{color:var(--accent);font-size:14px;margin:0 0 8px}
+.tl p{margin:0 0 8px;color:var(--muted);font-size:15px;max-width:44em}
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:36px}
+.about ul{list-style:none;margin:0;padding:0;font-family:"JetBrains Mono",monospace;font-size:14px;display:grid;gap:10px;align-content:start}
+.about li{border:1px solid var(--line);background:var(--card);border-radius:10px;padding:12px 14px}
+.about p{color:var(--muted);margin:0 0 14px}
+.links{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.js .rv{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}
+.js .rv.in{opacity:1;transform:none}
+@media(max-width:720px){nav ul{display:none}.about{grid-template-columns:1fr}.hero{padding-top:52px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+<a class="logo" href="#top">DERRICK<b>.</b>KOROS</a>
+<ul><li><a href="#work">Work</a></li><li><a href="#about">About</a></li><li><a href="#experience">Experience</a></li><li><a href="#contact">Contact</a></li></ul>
+<span class="badge">Open to opportunities</span>
+</div></nav>
+
+<main id="top">
+<header class="hero"><canvas id="net" aria-hidden="true"></canvas><div class="wrap">
+<p class="eyebrow">Derrick Koros · IT Systems · Security · Software</p>
+<h1>I build systems that work, and <em>keep them secure.</em></h1>
+<p class="lead">Computer Science student at Strathmore University, Nairobi. IT support, systems and network administration, cybersecurity and software, with a soft spot for problems people actually feel.</p>
+<div class="btns"><a class="btn p" href="#work">View selected work</a><a class="btn" href="#contact">Let's connect</a></div>
+<div class="term"><div class="tbar"><i></i><i></i><i></i></div>
+<div class="tbody" id="tb"><div id="out"></div><div class="tline"><span class="ps">derrickkoros@nairobi:~$</span><input id="in" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Terminal input"></div></div></div>
+<p class="hint">Psst, it's interactive. Try <b class="mono">help</b>, <b class="mono">skills</b> or <b class="mono">projects</b>.</p>
+<div class="stats">
+<div class="stat"><b><span data-to="4">4</span>th</b><span>year, BSc Computer Science</span></div>
+<div class="stat"><b data-to="18">18</b><span>tools in my stack</span></div>
+<div class="stat"><b data-to="1">1</b><span>mental health app in Kipsigis</span></div>
+<div class="stat"><b data-to="2027">2027</b><span>graduation</span></div>
+</div>
+</div></header>
+
+<section id="work"><div class="wrap">
+<p class="label rv">Selected work</p>
+<h2 class="rv">A few things I've built and looked after.</h2>
+<div class="grid">
+<article class="card rv"><span class="n">01 · Final year project</span><h3>Mental health app in Kipsigis</h3>
+<p>A mobile app offering mental health support in the Kipsigis language, so care is available in the language people think and feel in.</p>
+<div class="tags"><span>React Native</span><span>Node.js</span><span>MongoDB</span></div>
+<a class="more" href="https://github.com/KorosDerrickKipkoech">View on GitHub →</a></article>
+<article class="card rv"><span class="n">02 · Internship</span><h3>IT support &amp; systems administration</h3>
+<p>Kept everyday IT running at Waterfund: supporting users, maintaining systems and troubleshooting so teams could keep working.</p>
+<div class="tags"><span>IT support</span><span>Windows</span><span>Linux</span></div>
+<a class="more" href="#experience">See experience →</a></article>
+<article class="card rv"><span class="n">03 · Hands-on lab</span><h3>Servers, networks &amp; security practice</h3>
+<p>Hands-on work with Linux servers, web servers and virtual machines, learning how systems are set up, reached and defended.</p>
+<div class="tags"><span>Ubuntu</span><span>SSH</span><span>Nginx</span><span>VirtualBox</span></div>
+<a class="more" href="https://github.com/KorosDerrickKipkoech">More on GitHub →</a></article>
+</div>
+</div></section>
+
+<section><div class="wrap">
+<p class="label rv">The stack</p>
+<h2 class="rv">Tools I reach for.</h2>
+<div class="marq rv"><div class="track" id="trk"></div></div>
+<div class="flow rv"><span>Problem</span><i>→</i><span>Design</span><i>→</i><span>Build</span><i>→</i><span>Secure</span><i>→</i><span>Deploy</span><i>→</i><span>Maintain</span></div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+<p class="label rv">Experience</p>
+<h2 class="rv">Where I've been learning.</h2>
+<div class="tl">
+<div class="rv"><span class="d">Internship</span><h3>Waterfund</h3><p class="r">IT Intern</p><p>IT support and systems administration: helping users, maintaining systems and resolving technical issues.</p></div>
+<div class="rv"><span class="d">2023 — 2027</span><h3>Strathmore University</h3><p class="r">BSc Computer Science</p><p>Coursework and projects across software, systems and security, with a growing focus on infrastructure and cybersecurity.</p></div>
+</div>
+</div></section>
+
+<section id="about"><div class="wrap about">
+<div class="rv"><p class="label">About</p><h2>A little more about me.</h2>
+<p>I'm a computer science student who likes knowing how things work under the hood, from the network to the app, and making them dependable.</p>
+<p>My interests run through cybersecurity, systems administration, cloud and DevOps. I care about technology that fits the people using it, which is why my final year project speaks Kipsigis.</p></div>
+<ul class="rv"><li>📍 Nairobi, Kenya</li><li>🎓 Strathmore University</li><li>🗓 Graduating 2027</li><li>🛡 Systems · Security · Software</li></ul>
+</div></section>
+
+<section id="contact"><div class="wrap">
+<p class="label rv">Contact</p>
+<h2 class="rv">Let's talk.</h2>
+<p class="lead rv">Looking for an intern, a junior IT or security teammate, or a project to collaborate on? I'd love to hear from you.</p>
+<div class="links rv">
+<a class="btn p" href="mailto:derrick.koros@strathmore.edu">Email</a>
+<a class="btn" href="https://github.com/KorosDerrickKipkoech">GitHub</a>
+<a class="btn" href="https://www.linkedin.com/">LinkedIn</a>
+</div>
+</div></section>
+</main>
+<footer><div class="wrap"><span>Derrick Koros · Nairobi, Kenya</span><span>© 2026</span></div></footer>
+
+<script>
+document.documentElement.classList.add('js');
+var RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+/* stack marquee */
+var tools=['Linux','Ubuntu','Windows','SSH','Apache','Nginx','VirtualBox','Docker','AWS','Python','Java','Kotlin','JavaScript','React Native','Node.js','Django','MongoDB','Git'];
+var trk=document.getElementById('trk');
+trk.innerHTML=tools.concat(tools).map(function(t){return '<span>'+t+'</span>'}).join('');
+/* reveal + counters */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+function count(el){var to=+el.dataset.to,suf=el.dataset.suf||'',t0=performance.now();
+ (function f(t){var p=Math.min(1,(t-t0)/1200);el.textContent=Math.round(to*(1-Math.pow(1-p,3)))+suf;if(p<1)requestAnimationFrame(f)})(t0)}
+var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){if(!RM)count(e.target);io2.unobserve(e.target)}})});
+document.querySelectorAll('[data-to]').forEach(function(el){io2.observe(el)});
+/* card spotlight */
+document.querySelectorAll('.card').forEach(function(c){c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')})});
+/* network canvas */
+var cv=document.getElementById('net'),cx=cv.getContext('2d'),W,H,P=[],m={x:-999,y:-999};
+function size(){var r=cv.parentElement.getBoundingClientRect();W=cv.width=r.width;H=cv.height=r.height;
+ P=Array.from({length:Math.min(70,Math.floor(W/15))},function(){return{x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.4,vy:(Math.random()-.5)*.4}})}
+cv.parentElement.addEventListener('pointermove',function(e){var r=cv.getBoundingClientRect();m.x=e.clientX-r.left;m.y=e.clientY-r.top});
+cv.parentElement.addEventListener('pointerleave',function(){m.x=m.y=-999});
+function draw(){cx.clearRect(0,0,W,H);var col=getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();cx.fillStyle=col;cx.strokeStyle=col;
+ P.forEach(function(p,i){if(!RM){p.x+=p.vx;p.y+=p.vy}if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
+  cx.globalAlpha=.55;cx.beginPath();cx.arc(p.x,p.y,1.7,0,7);cx.fill();
+  for(var j=i+1;j<P.length;j++){var q=P[j],d=Math.hypot(p.x-q.x,p.y-q.y);if(d<120){cx.globalAlpha=(1-d/120)*.22;cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(q.x,q.y);cx.stroke()}}
+  var dm=Math.hypot(p.x-m.x,p.y-m.y);if(dm<170){cx.globalAlpha=(1-dm/170)*.6;cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(m.x,m.y);cx.stroke()}});
+ if(!RM)requestAnimationFrame(draw)}
+size();draw();addEventListener('resize',function(){size();if(RM)draw()});
+/* terminal */
+var out=document.getElementById('out'),inp=document.getElementById('in'),tb=document.getElementById('tb');
+var PS='<span class="ps">derrickkoros@nairobi:~$</span> ';
+function print(h){var d=document.createElement('div');d.innerHTML=h;out.appendChild(d);tb.scrollTop=tb.scrollHeight}
+var C={
+help:'commands: <b>whoami</b> · <b>skills</b> · <b>projects</b> · <b>contact</b> · <b>clear</b>',
+whoami:'<b>Derrick Koros</b>: CS student @ Strathmore, Nairobi.\nSysadmin mindset, security curiosity, software hands.',
+skills:'<u>systems</u>   Linux, Ubuntu, Windows, SSH, Apache, Nginx, VirtualBox\n<u>cloud</u>     AWS, Docker, Git\n<u>code</u>      Python, Java, Kotlin, JavaScript, React Native, Node.js, Django',
+projects:'01 <b>Kipsigis mental health app</b> (final year project)\n02 <b>IT support &amp; sysadmin</b> @ Waterfund\n03 <b>Servers &amp; security lab</b>',
+contact:'<u>derrick.koros@strathmore.edu</u>\ngithub.com/KorosDerrickKipkoech'};
+function run(v){v=v.trim().toLowerCase();if(!v)return;print(PS+v);
+ if(v==='clear'){out.innerHTML='';return}
+ print(C[v]||'command not found: '+v.replace(/</g,'&lt;')+'. try <b>help</b>')}
+inp.addEventListener('keydown',function(e){if(e.key==='Enter'){run(inp.value);inp.value=''}});
+function sleep(ms){return new Promise(function(r){setTimeout(r,ms)})}
+(async function boot(){
+ var d=document.createElement('div');out.appendChild(d);
+ if(RM){d.innerHTML=PS+'whoami';print(C.whoami);return}
+ d.innerHTML=PS;var s=document.createElement('span');d.appendChild(s);
+ await sleep(500);for(var ch of 'whoami'){s.textContent+=ch;await sleep(90)}
+ await sleep(250);print(C.whoami)})();
+</script>
+</body>
+</html>
